@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include <string>
-#include "Character.h"
 #include "Gameplay.h"
+#include "Player.h"
 
 using namespace std;
 char m_choice;
@@ -15,11 +15,14 @@ char m_choice;
 int main() 
 {
 	bool gameContinue = true;
-
+	Gameplay newGame;
+	Player newPlayer;
+	
+	
 	while (gameContinue) 
 	{
-		Gameplay newGame;
 		newGame.runGame();
+		newPlayer.PlayerInventory();
 
 		//Exit Game
 		std::cout << "\nWould you like to create another character? \033[1;31m (y/n): \033[0m";
@@ -29,6 +32,8 @@ int main()
 			gameContinue = false;
 		}
 		std::cin.ignore();
+
+
 	}
 	cout << "Thank you for playing!\n";
 	return 0;
