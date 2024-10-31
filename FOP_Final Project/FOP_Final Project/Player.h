@@ -1,38 +1,46 @@
 #pragma once
+#include "Character.h"
+#include "Enemy.h"
 #include <iostream>
-#include <vector>
 #include <string>
 
 using namespace std;
+struct Inventory {
+	int m_healPotion;
+	int m_powerPotion;
+	int m_xpAmount;
+};
 
-
-class Player
+class Player : public Character
 {
 public:
 	Player();
 	~Player();
-	void PlayerInventory();
+	//void PlayerInventory();
 	void TakeDamage(int damage);
-	void LightAttack(Player& enemy);
-	void HeavyAttack(Player& enemy);
+	void LightAttack(Enemy& enemy);
+	void HeavyAttack(Enemy& enemy);
 	void ReceiveXP(int amount);
 
-	int GetHelth() const;
-	int GetXP() const;
-	int GetDamage() const;
-	const vector<string> GetInventory() const;
-
-	void SetHealth(int newHealth);
+	int GetXP();
+	int GetDamage();
+	
 	void SetXP(int newXP);
 	void SetDamage(int newDamage);
 
 
-private:
+	void AddItem(const string& item, int amount);
+	void RemoveItem(const string& item, int amount);
+	void DisplayInventory() const;
 
-	vector <std::string> m_playerInventory;
-	int m_playerHelth;
+
+private:
+		
 	int m_playerXP;
 	int m_palayeDamage;
+
+	Inventory m_inventory;
+
 
 };
 

@@ -12,6 +12,10 @@ Gameplay::Gameplay()
 	m_choice = 0;
 }
 
+Gameplay::~Gameplay()
+{
+}
+
 void Gameplay::runGame()
 {
 	Character* m_pPlayer = new Character();
@@ -45,9 +49,13 @@ void Gameplay::runGame()
 		cin >> m_classChoice;
 	}
 	m_pPlayer->SetHeroClass(m_classChoice);
-
-	m_pPlayer->generateHeroStats();
+	
 	m_pPlayer->displayCharacter();
+
+	cout << " -------" << m_pPlayer->GetHeavyAttack() << m_pPlayer->GetHeroHealth() << m_pPlayer->GetLightAttack() << "\n";
+
+
+	
 }
 
 bool Gameplay::validInput(int choice, int min, int max)

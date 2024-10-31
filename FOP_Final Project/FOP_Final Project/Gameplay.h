@@ -7,6 +7,7 @@ class Gameplay
 {
 public:
 	Gameplay();
+	~Gameplay();
 
 	void runGame();
 
@@ -14,6 +15,7 @@ public:
 	int m_heroChoice;
 	int m_classChoice;
 	char m_choice;
+	
 
 	bool validInput(int choice, int min, int max);
 };
