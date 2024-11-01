@@ -23,7 +23,7 @@ int main()
 	while (gameContinue) 
 	{
 		newGame.runGame();
-		newPlayer.DisplayInventory();
+		/*newPlayer.DisplayInventory();
 		
 		newEnemy.DisplayEnemy();
 		cout << "pres a to attack enemy!\n";
@@ -31,7 +31,7 @@ int main()
 		
 	
 		newPlayer.LightAttack(newEnemy);
-		cout << newEnemy.GetHealth();
+		cout << newEnemy.GetHealth();*/
 		
 
 		//Exit Game

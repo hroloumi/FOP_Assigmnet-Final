@@ -20,6 +20,7 @@ public:
 	void TakeDamage(int damage);
 	void LightAttack(Enemy& enemy);
 	void HeavyAttack(Enemy& enemy);
+	void SpecialAttack(Enemy& enemy);
 	void ReceiveXP(int amount);
 
 	int GetXP();

@@ -15,6 +15,8 @@ public:
 	void generateHeroStats();
 	void SetHeroHealth();
 
+	void SetLightAttack(int light);
+
 	string getHeroName(int heroChoise) const;
 	string getClassName(int classChoise) const;
 

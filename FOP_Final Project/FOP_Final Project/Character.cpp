@@ -61,6 +61,11 @@ void Character::SetHeroHealth()
 	cout << "--- Health: " << "\033[1;32m" << m_currentHealth << "\033[0m\n";
 }
 
+void Character::SetLightAttack(int light)
+{
+	m_lightAttack = light;
+}
+
 string Character::getHeroName(int heroChoise) const
 {
 	switch (heroChoise) 

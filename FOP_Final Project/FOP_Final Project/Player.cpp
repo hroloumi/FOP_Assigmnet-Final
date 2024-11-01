@@ -56,12 +56,12 @@ void Player::TakeDamage(int damage)
 
 void Player::LightAttack(Enemy& enemy)
 {
-	enemy.TakeDamage(Character::m_lightAttack);
+	enemy.TakeDamage(100);
 }
 
 void Player::HeavyAttack(Enemy& enemy)
 {
-	enemy.TakeDamage(Character::GetHeavyAttack());
+	enemy.TakeDamage(200);
 }
 
 void Player::ReceiveXP(int amount)
