@@ -1,5 +1,9 @@
 #pragma once
 #include <string>
+#include "Character.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "LevelManager.h"
 
 using namespace std;
 
@@ -10,6 +14,13 @@ public:
 	~Gameplay();
 
 	void runGame();
+
+private:
+
+	Character* m_pCharacter;
+	Player* m_pPlayer;
+	Enemy* m_pEnemy;
+	LevelManager* m_pLevel;
 
 	string m_name;
 	int m_heroChoice;

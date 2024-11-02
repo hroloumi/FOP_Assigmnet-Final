@@ -47,7 +47,7 @@ int Enemy::GetXPAmount(int XP)
 	return m_XPAmount;
 }
 
-bool Enemy::GetAlive(bool alive)
+bool Enemy::GetIsAlive(bool alive)
 {
 	return m_isDead = false;
 }

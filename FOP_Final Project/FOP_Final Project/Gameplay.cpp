@@ -1,12 +1,15 @@
 #include <iostream>
 #include <string>
 #include "Gameplay.h"
-#include "Character.h"
-#include "Player.h"
-#include"Enemy.h"
+
+
 
 Gameplay::Gameplay()
 {
+	m_pCharacter = new Character();
+	m_pPlayer = new Player();
+	m_pEnemy = new Enemy("BadGuy", 500, 10, 10, true);
+	m_pLevel = new LevelManager();
 
 	m_name = " ";
 	m_heroChoice = 0;
@@ -16,14 +19,22 @@ Gameplay::Gameplay()
 
 Gameplay::~Gameplay()
 {
+	delete m_pCharacter;
+	m_pCharacter = nullptr;
+
+	delete m_pPlayer;
+	m_pPlayer = nullptr;
+
+	delete m_pEnemy;
+	m_pEnemy = nullptr;
+
+	delete m_pLevel;
+	m_pLevel = nullptr;
 }
 
 void Gameplay::runGame()
 {
-	Character* m_pCharacter = new Character();
-	Player* m_pPlayer = new Player();
-	Enemy* m_pEnemy = new Enemy("BadGuy", 500, 10, 10, true);
-
+	
 	cout << "\033[1;33m ====> Darksiders RPG Advantuer <====\n\n";
 	cout << "Please enter your character's name\033[0m \n(max 10 characters): \n";
 	getline(std::cin, m_name);
@@ -55,14 +66,20 @@ void Gameplay::runGame()
 	m_pCharacter->SetHeroClass(m_classChoice);
 	
 	m_pCharacter->displayCharacter();
-
-	cout << " -------" << m_pCharacter->GetHeavyAttack() << m_pCharacter->GetHeroHealth() << m_pCharacter->GetLightAttack() << "\n";
+	
 	m_pPlayer->DisplayInventory();
-	m_pEnemy->DisplayEnemy();
+	
 
-	m_pPlayer->LightAttack(*m_pEnemy);
+	/*m_pPlayer->LightAttack(*m_pEnemy);
 	m_pPlayer->HeavyAttack(*m_pEnemy);
-	m_pEnemy->DisplayEnemy();
+	m_pEnemy->DisplayEnemy()*/;
+	cout << "\n";
+	cout << "\n";
+	
+	cout << "Choose a level (1-4) or 0 to quit: \n";
+	cin >> m_choice;
+	m_pLevel->MoveToLevel(m_choice);
+	
 
 	
 }

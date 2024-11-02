@@ -18,7 +18,7 @@ class Enemy
 	int GetHealth();
 	int GetAttackDamage(int damage);
 	int GetXPAmount(int XP);
-	bool GetAlive(bool alive);
+	bool GetIsAlive(bool alive);
 
 private:
 	string m_Name;
